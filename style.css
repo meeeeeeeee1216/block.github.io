@@ -1,0 +1,63 @@
+.title{
+    font-family: "Hiragino Maru Gothic ProN W4";
+}
+.field{
+    width: 1500px;
+    height: 800px;
+    background-color: aqua;
+    border:0.5px solid black;
+    position: relative;
+
+}
+
+#gameover{
+    font-size: 100px;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    display: none;
+}
+#gameclear{
+    font-size: 100px;
+    color: yellow;
+    font-weight: bold;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    display: none;
+}
+#bar{
+    width: 200px;
+    height: 10px;
+    background: black;
+    position:absolute;
+    top: 800px;
+    left: 600px;
+}
+
+.circle{
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+    position:absolute;
+    top: 650px;
+    left: 650px;
+}
+
+#blocks{
+    position:relative;
+    width: 1500px;
+    height: 800px;
+}
+
+.block{
+    width: 50px;
+    height:50px;
+    background-color: white;
+    position:absolute;
+    top:0;
+    display: inline;
+}
