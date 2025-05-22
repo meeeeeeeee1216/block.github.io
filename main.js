@@ -1,16 +1,17 @@
 // ブロック配置
 
 var block_parent = document.getElementById("blocks");
-
-for (let index = 0; index < 19; index++) {
+for (let index = 0; index < 12 * 3; index++) {
     const child = document.createElement("div");
     block_parent.appendChild(child); 
     child.classList.add("block")
 }
+
 var blocks = document.getElementsByClassName("block");
 for (let index = 0; index < blocks.length; index++) {
     const element = blocks[index];
-    element.style.left = 0 + index * 80 + "px";
+    element.style.left = 0 + (index%12) * 80 + "px";
+    element.style.top = 0 + Math.floor(index/12) * 80 + "px";
 }
 
 // barイベント
@@ -48,20 +49,17 @@ moveBall = function(){
 
     //ゲームスタート待機
     const gamewait = document.getElementById("gamewait");
-    
-
     document.addEventListener("keydown", function(e){
-    if(e.key == "SPACE"){
-       gamewait.style.display = this.nodeName;
-           Ball.vy = 20;
-           Ball.vx = 10;
+        if(e.key == " "){
+            gamewait.style.display = "none";
+            Ball.vy = 20;
+            Ball.vx = 10;
     }
     })
 
+    //玉移動
     Ball.y += Ball.vy;
     Ball.x += Ball.vx;
-
-    
     ball.style.left = Ball.x + "px";
     ball.style.top = Ball.y + "px";
 
@@ -93,7 +91,7 @@ moveBall = function(){
     if(Ball.x >= parseInt(window.getComputedStyle(field).width)){
         Ball.vx = -1/2 * Ball.vx;
     }
-    // 上下壁判定
+    // 上壁跳ね返り
     if(Ball.y <= 0){
         Ball.vy = -Ball.vy;
     }
