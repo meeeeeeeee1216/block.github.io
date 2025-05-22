@@ -35,8 +35,8 @@ document.addEventListener("keydown", function(e){
 var ball = document.getElementById("ball");
 var Ball = {
     tag: document.getElementById("ball"),
-    vy: 20,
-    vx: 10,
+    vy: 0,
+    vx: 0,
     x: parseInt(window.getComputedStyle(ball).left),
     y: parseInt(window.getComputedStyle(ball).top),
     width:parseInt(window.getComputedStyle(ball).width),
@@ -45,6 +45,19 @@ var Ball = {
 
 
 moveBall = function(){
+
+    //ゲームスタート待機
+    const gamewait = document.getElementById("gamewait");
+    
+
+    document.addEventListener("keydown", function(e){
+    if(e.key == "SPACE"){
+       gamewait.style.display = this.nodeName;
+           Ball.vy = 20;
+           Ball.vx = 10;
+    }
+    })
+
     Ball.y += Ball.vy;
     Ball.x += Ball.vx;
 

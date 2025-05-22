@@ -28,6 +28,15 @@
     left: 400px;
     display: none;
 }
+#gamewait{
+    font-size: 100px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    display: "inline flex";
+}
 #bar{
     width: 200px;
     height: 10px;
